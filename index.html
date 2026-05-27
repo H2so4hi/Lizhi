@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Lychee Season · Ode to Labor | Hainan Lychee Cultural Retro Exhibition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #3e1e0b;
+            font-family: 'Courier New', 'Segoe UI', 'Microsoft YaHei', '宋体', monospace;
+            color: #2c1a0c;
+            line-height: 1.5;
+        }
+
+        .retro-wrapper {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: #fef0cf;
+            border: 12px double #b85c1a;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3), inset 0 0 0 4px #ffe2a4;
+            position: relative;
+            padding: 1.8rem;
+        }
+
+        .retro-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(100, 50, 20, 0.08) 2%, transparent 2.5%);
+            background-size: 18px 18px;
+            pointer-events: none;
+        }
+
+        .hero {
+            text-align: center;
+            border-bottom: 3px solid #c7421b;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: 4px;
+            color: #b32d00;
+            text-shadow: 3px 3px 0 #ffd58c;
+            font-weight: bold;
+            font-family: 'Impact', 'Courier New', monospace;
+        }
+
+        .hero .sub {
+            font-size: 1.3rem;
+            background: #b32d00;
+            display: inline-block;
+            color: #fff1c1;
+            padding: 0.3rem 1.2rem;
+            margin-top: 0.8rem;
+            border-radius: 30px;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        .slogan {
+            background: #d94e1f;
+            color: #fdebb3;
+            text-align: center;
+            padding: 0.5rem;
+            margin: 1.2rem 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-left: 8px solid #ffc107;
+            border-right: 8px solid #ffc107;
+        }
+
+        .grid-2col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 220px;
+            background: #fdf4e0;
+            border: 1px solid #d49c6c;
+            padding: 1rem;
+            box-shadow: 6px 6px 0 rgba(128, 64, 24, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 9px 9px 0 rgba(128, 64, 24, 0.3);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #d9b48b;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #b85c1a;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            border-left: 6px solid #dc4c1e;
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+        }
+
+        .quote-block {
+            background: #2f2216;
+            color: #ffefb9;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            box-shadow: inset 0 0 0 2px #ab6d3b, 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .quote-block span {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ffbc7a;
+        }
+
+        .timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline h2 {
+            background: #a53f1a;
+            color: #ffe5b4;
+            padding: 0.4rem 1rem;
+            display: inline-block;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+        }
+
+        .timeline-item {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 6px solid #e05a2a;
+            background: #fff3e0;
+            padding: 0.8rem;
+        }
+
+        .old-photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .photo {
+            background: #eacc9c;
+            width: 180px;
+            padding: 10px 10px 15px;
+            box-shadow: 5px 5px 0 #6b3b1a;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .photo .frame {
+            width: 100%;
+            height: 130px;
+            background-color: #c29a6b;
+            margin-bottom: 8px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            border-top: 2px solid #b16233;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #623b1a;
+        }
+
+        .star {
+            font-size: 1.5rem;
+            color: #e03a16;
+            letter-spacing: 6px;
+        }
+
+        button, .btn-style {
+            background: #bc401b;
+            border: none;
+            color: #ffefb3;
+            padding: 6px 14px;
+            font-family: monospace;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            background: #902d0e;
+        }
+
+        @media (max-width: 700px) {
+            .retro-wrapper {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="retro-wrapper">
+    <div class="hero">
+        <h1>🍒 LYCHHEE VERMILION 🍒</h1>
+        <div class="sub">Labor Glory · Red Lychee Hymn of Harvest</div>
+        <div class="slogan">
+            ★ One Lychee, One Heart of Passion ★ From Branch to Bosom, Sweetness Belongs to the Strugglers ★
+        </div>
+    </div>
+
+    <div class="quote-block">
+        “I would gladly eat three hundred lychees a day, and never mind becoming a southerner.”<br>
+        Scholars of old sang of lychees; today, laborers nurture their fruit.<br>
+        Since the founding of New China, lychee farmers on Hainan Island have watered crimson clouds with sweat,<br>
+        carrying each sweet fruit from deep mountain branches to the people’s hearts.<br>
+        <span>— Salute to every glorious laborer who tills the land</span>
+    </div>
+
+    <div class="grid-2col">
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://i.ibb.co/ks6wdd2v/img-liangong-caizhai.jpg');"></div>
+            <h3>🔥 Glory Beneath the Lychee Trees</h3>
+            <p>In the 1950s-60s, Hainan lychee farmers carried heavy loads on shoulders, picking "branch-leaving fruit" at dawn. Every ruby-red lychee was a medal of hard work in collective cooperatives. Labor competitions and harvest offerings echoed the era's rallying cries.</p>
+            <button onclick="alert('Salute to labor models! Lychee season, sweetest sweat.')">🎖️ Tribute to Labor Heroes</button>
+        </div>
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://i.ibb.co/ymNVt3bD/img-hongse-lizhi-wenhua.jpg');"></div>
+            <h3>📜 Red Lychee Rhymes · Cultural Heritage</h3>
+            <p>From Tang-Song tribute to the "Three Wonders Lychee Stele", from revolutionary-era lychee supplies to today's "Lychee Capital" Haikou — one lychee strings together millennia of spirit and witnesses agricultural flourishing under socialist construction.</p>
+            <button onclick="alert('Lychee culture runs deep; labor makes history.')">📖 Read Lychee History</button>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <h2>◈ Glorious Years · Red Lychee Chronicles ◈</h2>
+        <div class="timeline-item">
+            <strong>🏅 1950s · Emancipated Lychee Growers</strong> — In early years of New China, land reform in Hainan's lychee regions gave farmers orchard shares, igniting planting enthusiasm. "Labor is glorious" echoed through the groves.
+        </div>
+        <div class="timeline-item">
+            <strong>📢 1963 · Lychee Labor Model Assembly</strong> — Guangdong Province (including Hainan) held a lychee bumper harvest exchange. Labor models wore red silk flowers and presented fresh lychees to the motherland.
+        </div>
+        <div class="timeline-item">
+            <strong>🍃 1980s · Tech Boosts Lychee, Happiness for All</strong> — With reform and opening, Hainan's lychee agrotech stations promoted dwarf cultivation. Lychees reached nationwide markets, allowing more workers to share sweet rewards.
+        </div>
+        <div class="timeline-item">
+            <strong>✨ 2026 · Lychee Vermilion Cultural Exhibition</strong> — Hainan Provincial Museum honors the millennium-long lychee legacy, specially showcasing stories of laborers and lychees, intertwining tradition with red-spirit pride.
+        </div>
+    </div>
+
+    <h2 style="color:#a13310; margin-top: 20px;">📸 Memorable Years · Lychee Imprints</h2>
+    <div class="old-photo-gallery">
+        <div class="photo">
+            <div class="frame" style="background-image: url('https://i.ibb.co/d04yBvSC/img-old-harvest-1958.jpg');"></div>
+            <span>1958 Hainan Lychee Harvest — Commune Members Joyfully Pick Lychees</span>
+        </div>
+        <div class="photo">
+            <div class="frame" style="background-image: url('https://i.ibb.co/hJfQysNb/img-lizhi-gongshe-xuanchuan.jpg');"></div>
+            <span>Labor Poster: "Lychees Are Red, Energy Is High"</span>
+        </div>
+        <div class="photo">
+            <div class="frame" style="background-image: url('https://i.ibb.co/CqPzp8t/img-hainan-lizhi-laodongmofan.jpg');"></div>
+            <span>Hainan Lychee Labor Model Commendation — Red Lychee Mirrors Red Heart</span>
+        </div>
+        <div class="photo">
+            <div class="frame" style="background-image: url('https://i.ibb.co/SX2LYbHW/img-lizhibei-santiejue.jpg');"></div>
+            <span>"Lychee Stele" Rubbing — A Millennial Ode to Labor</span>
+        </div>
+    </div>
+
+    <div style="background: #e7cfaa; padding: 1.5rem; margin: 2rem 0; border: 2px dotted #b45628;">
+        <p style="font-size:1.2rem; font-weight:bold;">🌟 Hainan Provincial Museum · Special Retro Guided Tour 🌟</p>
+        <p>📍 Exhibition: "Lychee Vermilion — Lychee Culture Exhibition" Hall 5<br>
+        ⏰ Dates: April 29, 2026 — August 30, 2026<br>
+        🎫 Revisit red agricultural memories through artifacts: Qianlong enamel "ice chest", Hua Yan's "Lychee Scroll", restored Song dynasty lychee-shell incense formulas...<br>
+        🧑‍🌾 Special section: "Laborers and Lychees" vintage photo wall showcasing precious images of Hainan's lychee industry in early PRC days.<br>
+        🍵 On-site experience: "Lychee Fragrance Elegance" tea & incense gatherings, honoring working people's wisdom with lychee-infused crafts.<br>
+        <button onclick="alert('Bring your family to Hainan Provincial Museum and experience labor creating sweetness!')">🎟️ Begin Retro Exhibition Journey</button>
+        </p>
+    </div>
+
+    <div class="quote-block" style="background:#4f2a14; padding:1.2rem;">
+        “From branch to bosom, a lychee's journey relies on hoes and baskets under the scorching sun. Salute to every diligent cultivator — you are the true protagonists of the lychee story!”<br>
+        <span>— Zhu Lei, Director of Hainan Provincial Museum, in Tribute to the Working People</span>
+        <div style="margin-top:15px;">
+            <button onclick="document.getElementById('praiseMessage').style.display='block'">❤️ I Praise the Working People</button>
+            <div id="praiseMessage" style="display:none; margin-top:10px; background:#e1b282; color:#2c1c0b; padding:6px;">Glory belongs to laborers! Lychees sweeten the divine land because of you!</div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem; margin: 1rem 0;">
+        <div style="background:#fae6c3; flex:1; padding:0.6rem; text-align:center; border:1px solid #bc6f3a;">
+            🧊 Qianlong Enamel Ice Chest → Imperial chilled lychee tribute
+        </div>
+        <div style="background:#fae6c3; flex:1; padding:0.6rem; text-align:center; border:1px solid #bc6f3a;">
+            🖌️ Hua Yan’s "Lychee Scroll" → Literati longing across a thousand miles
+        </div>
+        <div style="background:#fae6c3; flex:1; padding:0.6rem; text-align:center; border:1px solid #bc6f3a;">
+            🌿 Song Lychee Shell Incense Formula → Rustic wisdom in refined chambers
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="star">★ ★ ★ LABOR IS GLORIOUS · LYCHEE FRAGRANCE FILLS THE LAND ★ ★ ★</div>
+        <p>This page honors the working people of early PRC years · Red retro-themed lychee culture promotion | Data reference: Hainan Provincial Museum "Lychee Vermilion" special exhibition<br>
+        Creative practice assignment: Celebrating the sweat and glory behind lychees with working people as protagonists.</p>
+        <p style="margin-top:10px;">🍁 From branch to bosom, sweetness belongs to every striver 🍁</p>
+    </div>
+</div>
+</body>
+</html>
